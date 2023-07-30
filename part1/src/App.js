@@ -13,11 +13,11 @@ const App = () => {
   const name = "Jane Doe";
   const age = 10;
   return (
-    <div>
+    <>
       <Hello name={"John Doe"} />
       <Hello name={name} age={age} />
       <p>The time is {now.toString()}</p>
-    </div>
+    </>
   );
 };
 
