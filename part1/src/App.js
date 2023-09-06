@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const Hello = (props) => {
   console.log(props);
   return (
@@ -16,6 +18,10 @@ const App = () => {
     { name: "Peter", age: 4 },
     { name: "Maya", age: 10 },
   ];
+  const [counter, setCounter] = useState(0);
+
+  setTimeout(() => setCounter(counter + 1), 1000);
+  console.log("rendering...", counter);
 
   return (
     <>
@@ -28,6 +34,7 @@ const App = () => {
       <p>
         {friends[1].name}, {friends[1].age}
       </p>
+      <p>{counter}</p>
     </>
   );
 };
