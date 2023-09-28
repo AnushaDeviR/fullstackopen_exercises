@@ -1,20 +1,18 @@
 import { useState } from "react";
 
-const Hello = (name, age) => {
+const Hello = ({ name, age }) => {
   return (
-    <div>
-      <p>
-        Hello {name}, you are {age} years old.
-      </p>
-    </div>
+    <p>
+      Hello {name}, you are {age} years old.
+    </p>
   );
 };
 
-const Display = (counter) => {
+const Display = ({ counter }) => {
   return <>{counter}</>;
 };
 
-const Button = (handleClick, text) => {
+const Button = ({ handleClick, text }) => {
   return <button onClick={handleClick}>{text}</button>;
 };
 
@@ -22,10 +20,10 @@ const App = () => {
   const now = new Date();
   const name = "Jane Doe";
   const age = 10;
-  const friends = [
-    { name: "Peter", age: 4 },
-    { name: "Maya", age: 10 },
-  ];
+  // const friends = [
+  //   { name: "Peter", age: 4 },
+  //   { name: "Maya", age: 10 },
+  // ];
   const [counter, setCounter] = useState(0);
 
   // setTimeout(() => setCounter(counter + 1), 1000);
