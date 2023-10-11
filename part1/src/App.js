@@ -1,4 +1,5 @@
 import { useState } from "react";
+import MoreCounters from "./components/complexState";
 
 const Hello = ({ name, age }) => {
   return (
@@ -51,6 +52,10 @@ const App = () => {
       <Button handleClick={resetCounter} text="Reset" />
 
       <p>Timestamp: {now.toString()}</p>
+
+      <h2>A more complex state, debugging react apps</h2>
+
+      <MoreCounters />
     </>
   );
 };
