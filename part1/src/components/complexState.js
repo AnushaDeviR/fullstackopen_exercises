@@ -3,7 +3,6 @@ import React, { useState } from "react";
 const MoreCounters = () => {
   const [left, setLeft] = useState(0);
   const [right, setRight] = useState(0);
-  const [allClicks, setAllClicks] = useState([]); //array handlers
 
   // 👆🏼 can also be written as:
 
@@ -27,6 +26,8 @@ const MoreCounters = () => {
     };
     setClicks(newClicks);
   };
+
+  const [allClicks, setAllClicks] = useState([]); //array handlers
 
   const handleLeftConcat = () => {
     setAllClicks(allClicks.concat("L"));
