@@ -28,18 +28,27 @@ const MoreCounters = () => {
   };
 
   const [allClicks, setAllClicks] = useState([]); //array handlers
+  const [total, setTotal] = useState(0);
 
   const handleLeftConcat = () => {
     setAllClicks(allClicks.concat("L"));
-    setLeft(left + 1);
+    console.log("left before: ", left);
+    const updateLeft = left + 1;
+    setLeft(updateLeft);
+    console.log("left after: ", left);
+    setTotal(updateLeft + right);
   };
 
   const handleRightConcat = () => {
     setAllClicks(allClicks.concat("R"));
-    setRight(right + 1);
+    const updateRight = right + 1;
+    setRight(updateRight);
+    setTotal(left + updateRight);
   };
 
   const handleConcatClear = () => {
+    setLeft(0);
+    setRight(0);
     setAllClicks([]);
   };
 
@@ -50,7 +59,8 @@ const MoreCounters = () => {
         {clicks.left} <button onClick={handleLeftClicks}>Left Counter</button>
       </div>
       <div>
-        {clicks.right} <button onClick={handleRightClicks}>Right Counter</button>
+        {clicks.right}{" "}
+        <button onClick={handleRightClicks}>Right Counter</button>
       </div>
       <h3>Handling Arrays</h3>
       <div>
@@ -62,6 +72,7 @@ const MoreCounters = () => {
         <br />
         <button onClick={handleConcatClear}>Clear Concat</button>
         <p>{allClicks.join(" ")}</p>
+        <p> Total: {total}</p>
       </div>
     </div>
   );
